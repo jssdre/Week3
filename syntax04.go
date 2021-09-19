@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-//난수 추출된 수의 소수 판정 프로그램 v0.4
+//난수 추출된 수의 소수 판정 프로그램 v0.6
 //소수는 1과 자기 자신 외에 나누어 떨어지지 않음
 func main() {
 	seed := time.Now().Unix()
@@ -19,6 +19,7 @@ func main() {
 	for i := 2; i < number; i++ {
 		if number%i == 0 {
 			isPrime = false
+			break //첫 번째 약수가 발견되면 반복문 즉시 종료
 		}
 		//fmt.Print(i, " ")
 	}
